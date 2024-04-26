@@ -1,7 +1,9 @@
 let journalEntries = [];
   
-  function displayEntries() {
-    const journalList = document.getElementById('journal-entries');
+  function displayEntries(journalList) {
+    if (!journalList) {
+      journalList = document.getElementById('journal-entries');
+    }
     journalList.innerHTML = '';
     journalEntries.forEach(entry => {
       const li = document.createElement('li');
